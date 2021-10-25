@@ -17,9 +17,11 @@ import {
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FiArrowUpRight} from "react-icons/fi";
 import { FiCheckSquare } from "react-icons/fi";
-import { BsFillBasket2Fill } from "react-icons/bs";
 import { Button } from 'reactstrap';
 import { FaBeer } from 'react-icons/fa';
+import CartWidget from '../CartWidget/CartWidget';
+import "./NavBar.css"
+
 
 class Question extends React.Component {
   render() {
@@ -36,19 +38,19 @@ const Example = (props) => {
 
   return (
     <div>
-      <Navbar color="light miNav" light expand="md">
-        <NavbarBrand href="#">Mi Ecommerce</NavbarBrand>
+      <Navbar color="dark" light expand="md">
+        <NavbarBrand className="text-white" href="#">Mi Ecommerce</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
-            <NavItem>
-              <NavLink href="/components/"> <FiArrowUpRight /> Iniciar sesión</NavLink>
+            <NavItem >
+              <NavLink  className="text-warning item" href="/components/"> <FiArrowUpRight /> Iniciar sesión</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#"> <FiCheckSquare /> Crear cuenta</NavLink>
+              <NavLink className="text-warning item" href="#"> <FiCheckSquare /> Crear cuenta</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#"><BsFillBasket2Fill /> Carrito</NavLink>
+              <NavLink href="#"><CartWidget/></NavLink>
             </NavItem>
           </Nav>
         </Collapse>
